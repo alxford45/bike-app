@@ -1,25 +1,6 @@
 # Frontend
 
 ---
-
-# Git Strategy
-
-```
-BEGIN Sprint
-
-    merge main -> backend
-    merge main -> client
-    merge client -> client-**
-
-    PUSH CHANGES
-
-    merge backend -> main
-    merge client-xx -> client
-    merge client -> main
-
-END Sprint
-```
-
 # Directory Structure
 
 -   `index.ts` files are used for import/exports.
@@ -29,9 +10,13 @@ END Sprint
 
 ```
 📦src
- ┣ 📂auth                       Auth module: manages user roles and login
- ┃ ┣ 📜[auth files]
- ┃ ┗ 📜index.ts
+ ┣ 📂context                        
+ ┃ ┣ 📂styles                   Styles Module: manages the inheritance of Dashboard css
+ ┃ ┃ ┣ 📜[style ctx files]
+ ┃ ┃ ┗ 📜index.ts
+ ┃ ┣ 📂auth                     Auth module: manages user roles and login
+ ┃ ┃ ┣ 📜[auth files]
+ ┃ ┃ ┗ 📜index.ts
  ┣ 📂components                 Components module: manages miscellaneous/re-usable components
  ┃ ┣ 📂forms
  ┃ ┃ ┣ [form components]
@@ -132,7 +117,7 @@ Landing home page for users not signed in. Provides links to sign-in and sign-up
 
 Sign-in page that allows customers/managers/owner to sign in to website.
 
-## SignUp (needs final testing & cleanup)
+## SignUp (complete)
 
 Sign-up page that allows customers to sign-up to website.
 
@@ -166,7 +151,7 @@ View that shows customer transaction history
 
 ## Manager
 
-### VerifyPurchases (implemented, needs final testing)
+### VerifyPurchases (complete)
 
 View that allows manager to add fees of completed transactions in the last hour
 

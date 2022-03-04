@@ -1,22 +1,68 @@
-# README
+# Bike App
 
-https://docs.google.com/document/d/1wcqRdzffat8AI4cNuwbFtHgJrsrXMfr_R5Zs-ofxBh8/edit?usp=sharing
+<img alt="screenshot" src=".assets/rent-bike-app.png">
 
-# TEST PLAN
-https://docs.google.com/document/d/1i1rnR4PU6OOl7_aiU0IxZd9_VUcOv4i1QIX9AMKXjO0/edit?usp=sharing
+## Summary
 
-# TEST RESULTS
-https://docs.google.com/document/d/1Gv3T49qYi0kCtCr08NXVWaCKx5iq857t7eFnkd2mfNU/edit?usp=sharing
+A prototype web application for a bike rental company that allows:
 
+- customers to rent and return bikes
+- managers to add late fees to transactions
+- the owner to view generated reports on transactions
 
-## Milestone 1
+Detailed project specs in <a href="./.assets/DesignDoc.pdf">Design Document</a>
 
-- Story or Scenario
+## Design
 
-- Use cases
+### Frontend
 
-- Project Backlog
+<details>
+    <summary>Frontend Design Diagram <em>(click to show/hide)</em></summary>
+    <img alt="frontend model" src=".assets/frontend_model.png">
+</details>
+<details>
+    <summary>Landing Page Wireframe <em>(click to show/hide)</em></summary>
+    <img alt="wireframe" src=".assets/landing_page_wireframe.png">
+</details>
 
-- Backlog for first spring
+<br>
+More Details in<a href="https://github.com/alxford45/bike-app/tree/main/frontend"> Frontend Readme</a>
 
-- Contribution from each team member
+### Database
+
+<details>
+    <summary>ER Diagram <em>(click to show/hide)</em></summary>
+    <img alt="ER diagram" src=".assets/ERDiagram.png">
+</details>
+<details>
+    <summary>DB Model <em>(click to show/hide)</em></summary>
+    <img alt="DB relational model" src=".assets/RelationalModel.png">
+</details>
+
+### Backend Integration
+
+![Integration Diagram](./.assets/integration.png)
+
+- Both client and server maintain user state through the use of an http cookie.
+- The server uses Express-Sessions as middleware to map the cookie to an active user session.
+- Following a valid sign-in request, the server attaches a cookie to the the response.
+- All subsequent client requests include the attached cookie.
+- When the client makes a request to a protected resource, the server is able to check if the active user session is authorized to receive the resource
+
+## Git Strategy
+
+```
+BEGIN Sprint
+
+    merge main -> backend
+    merge main -> client
+    merge client -> client-**
+
+    PUSH CHANGES
+
+    merge backend -> main
+    merge client-xx -> client
+    merge client -> main
+
+END Sprint
+```
